@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your To Do List</title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+<body>
+   <h1><%= greeting %></h1>
+   <ul>
+       <% tasks.forEach(function(task){ %>
+       <li><%= task.title %><li>\
+       <li><%=task.priority %></li>
+       <% }) %>
+   </ul>
+</body>
+</html>
