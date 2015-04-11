@@ -11,11 +11,15 @@
    <h1><%= greeting %></h1>
    <ul>
        <% tasks.forEach(function(task){ %>
-       <li><%= task.title %><li>\
-       <li><%=task.priority %></li>
+       <li>Tittle: <%= task.title %><li>
+       <li>Description: <%= task.description %><li>
+       <li>Priority: <%=task.priority %></li>
+       <li>Due Date: <%= task.due_date %><li>
+       <li>Time: <%= task.timestamp %><li>
+       <li>Completed? <%= task.completed %><li>
        <% }) %>
    </ul>
 
 </body>
 
-	</html>
+</html>

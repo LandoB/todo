@@ -11,7 +11,7 @@ var todoSchema = new Schema({
   description: String,
   title:  String,
   priority: Number,
-  complete: Boolean
+  completed: Boolean
 });
 
 var Todo = mongoose.model("Todo", todoSchema);
@@ -37,21 +37,22 @@ router.post('/', function (req, res) {
   //res.send('POST request to the homepage');
   new Todo({
 		  due_date: req.body.due_date,
-		  //timestamp: { type: Date, default: Date.now },
+		  timestamp: { type: Date, default: Date.now },
 		  description: req.body.description,
 		  title:  req.body.title,
 		  priority: req.body.priority,
-		  //complete: Boolean
+		  completed: req.body.completed
 	}).save(function (err, task){
 		if(err) {
 			return console.log(err);
 		}
-		console.log(task);
+		//console.log(task);
+		console.log("WHAT IS THIS?", req.body.completed);
 	});
 
 	res.redirect('todo');
 });
 
-var Todo = mongoose.model('Todo', todoSchema);
+// var Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = router;
