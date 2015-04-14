@@ -4,19 +4,25 @@
     <title>Your To Do List</title>
     <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/todo.css' />
   </head>
 
 <body>
-   <h1><%= greeting %></h1>
-   <ul>
+
+   <h1 class="greeting"><%= greeting %></h1>
+   <section id="toDoList">To Do Items added:</section>
+   <ul class="list-of-todo-items">
        <% tasks.forEach(function(task){ %>
-       <li>Tittle: <%= task.title %><li>
-       <li>Description: <%= task.description %><li>
-       <li>Priority: <%=task.priority %></li>
-       <li>Due Date: <%= task.due_date %><li>
-       <li>Time: <%= task.timestamp %><li>
-       <li>Completed? <%= task.completed %><li>
+       <div class="itemsBorder">
+       <li><b>Tittle:</b> <%= task.title %><li>
+       <li><b>Description:</b> <%= task.description %><li>
+       <li><b>Priority:</b> <%=task.priority %></li>
+       <li><b>Due Date:</b> <%= task.due_date %><li>
+       <li><b>Time:</b> <%= task.timestamp %><li>
+       <li><b>Completed?</b> <%= task.complete %><li><br><br>
+       </div>
        <% }) %>
    </ul>
 

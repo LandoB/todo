@@ -10,20 +10,7 @@ var todo = require('./routes/todo');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-// var firstTodo = new Todo ({
-//   due_date : Date.now(),
-//   description: "My first to do item",
-//   title:  "First",
-//   priority: 10,
-//   complete: false
-// });
 
-// firstTodo.save(function (err, first) {
-//   if (err) {
-//     return console.log(err);
-//   }
-//   console.log(first);
-// });
 
 var app = express();
 
@@ -40,16 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// // GET method route
-// app.get('/users', function (req, res) {
-//   res.send('GET request to the homepage');
-// });
 
-// // POST method route
-// app.post('/todo', function (req, res) {
-//   console.log('someone posted to me');
-//   res.send('POST request to the homepage');
-// });
 
 app.use('/', routes);
 app.use('/users', users);
