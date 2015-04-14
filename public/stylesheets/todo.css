@@ -19,7 +19,7 @@ section#toDoList {
   padding: 15px;
   width: 97%;
   background-color: #e8eeef;
-  color: #453;
+  color: #006666;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   border-radius: 10px;
 }
@@ -35,13 +35,8 @@ section#toDoList {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 20px;
-  /*width: 97%;*/
 }
 
-/*.list-of-todo-items ul {
-	border: 10px;
-  border-color: #8a97a0;
-}*/
 
 .itemsBorder {
 	background: rgba(255, 255, 255, 0.1);

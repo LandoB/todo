@@ -18,13 +18,13 @@ var Schema = mongoose.Schema;
 //   console.log(first);
 // });
 
-var todoSchema = new Schema({
+var todoSchema = mongoose.Schema({
   due_date: Date,
   timestamp: { type: Date, default: Date.now },
-  description: String,
-  title:  String,
+  description: { type: String, required: true },
+  title:  { type: String, required: true },
   priority: Number,
-  complete: Boolean
+  complete: { type: Boolean, default: false }
 });
 
 var Todo = mongoose.model("Todo", todoSchema);
@@ -80,5 +80,4 @@ module.exports = router;
 // });
 
 // var Todo = mongoose.model('Todo', todoSchema);
-
 
