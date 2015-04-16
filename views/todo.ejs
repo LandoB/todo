@@ -15,7 +15,7 @@
    <section id="toDoList">To Do Items added:</section>
    <ul class="list-of-todo-items">
        <% tasks.forEach(function(task){ %>
-       <div class="itemsBorder">
+       <div class="itemsBorder" id="todo_<%= task._id %>">
        <li><b>Tittle:</b> <%= task.title %><li>
        <li><b>Description:</b> <%= task.description %><li>
        <li><b>Priority:</b> <%=task.priority %></li>
