@@ -22,10 +22,13 @@
        <li><b>Due Date:</b> <%= task.due_date %><li>
        <li><b>Time:</b> <%= task.timestamp %><li>
        <li><b>Completed?</b> <%= task.complete %><li><br><br>
+       <li><button class="deleteButton" id="<%= task._id %>">Delete Me</button></li>
        </div>
        <% }) %>
    </ul>
 
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="javascripts/delete.js"></script>
 </body>
 
 </html>
