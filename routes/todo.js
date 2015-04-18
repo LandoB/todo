@@ -61,8 +61,8 @@ router.post('/', function (req, res) {
 		if(err) {
 			return console.log(err);
 		}
-		//console.log(task);
-		console.log("WHAT IS THIS? =======> ", req.body.complete);
+		console.log("HERE ARE YOUR ITEMS: ", task);
+		// console.log("WHAT IS THIS? =======> ", req.body.complete);
 	});
 
 	res.redirect('todo');

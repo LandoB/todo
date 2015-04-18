@@ -21,8 +21,10 @@
        <li><b>Priority:</b> <%=task.priority %></li>
        <li><b>Due Date:</b> <%= task.due_date %><li>
        <li><b>Time:</b> <%= task.timestamp %><li>
-       <li><b>Completed?</b> <%= task.complete %><li><br><br>
-       <li><button class="deleteButton" id="<%= task._id %>">Delete Me</button></li>
+       <li><b>Completed?</b> <%= task.complete %><li>
+       <p><button class="deleteButton myButton" id="<%= task._id %>">Delete Me</button>
+       <button class="editButton myButton" id="<%= task._id %>">Edit Me</button>
+       <button class="addButton myButton" id="<%= task._id %>">Add New Item</button></p>
        </div>
        <% }) %>
    </ul>
