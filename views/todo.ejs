@@ -1,36 +1,53 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> <html>
   <head>
-    <title>Your To Do List</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/todo.css' />
   </head>
+  <body>
 
-<body>
+  <div class="show-todo-item">
+    <a href="/todo/list">Show all tasks</a>
+  </div>
 
-   <h1 class="greeting"><%= greeting %></h1>
-   <section id="toDoList">To Do Items added:</section>
-   <ul class="list-of-todo-items">
-       <% tasks.forEach(function(task){ %>
-       <div class="itemsBorder" id="todo_<%= task._id %>">
-       <li><b>Tittle:</b> <%= task.title %><li>
-       <li><b>Description:</b> <%= task.description %><li>
-       <li><b>Priority:</b> <%=task.priority %></li>
-       <li><b>Due Date:</b> <%= task.due_date %><li>
-       <li><b>Time:</b> <%= task.timestamp %><li>
-       <li><b>Completed?</b> <%= task.complete %><li>
-       <p><button class="deleteButton myButton" id="<%= task._id %>">Delete Me</button>
-       <button class="editButton myButton" id="<%= task._id %>">Edit Me</button>
-       <button class="addButton myButton" id="<%= task._id %>">Add New Item</button></p>
-       </div>
-       <% }) %>
-   </ul>
+    <h1>Create a task</h1>
 
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="javascripts/delete.js"></script>
-</body>
+    <form method="POST" action="/todo" id="todoForm">
 
+      <input type="hidden" name="db_id" value="<%= todo._id %>">
+
+      <div class="formfield">
+        <div class="formfield--prompt">Title:</div>
+        <input type="text" id="todoTitle" name="title" value="<%= todo.title %>" required>
+      </div>
+      <div class="formfield">
+        <div class="formfield--prompt">Description:</div>
+        <textarea id="todoDescription" name="description"><%= todo.description %></textarea required>
+      </div>
+      <div class="formfield">
+        <div class="formfield--prompt">Priority (1-100):</div>
+        <input type="text" id="todoPriority" name="priority" value="<%= todo.priority %>" required>
+      </div>
+      <div class="formfield">
+        <div class="formfield--prompt">Complete by:</div>
+        <input type="text" id="todoDuedate"
+          name="due_date"
+          value="<%= todo.due_date.getMonth() + 1 %>/<%= todo.due_date.getDate() %>/<%= todo.due_date.getFullYear() %>" required>
+      </div>
+
+      <input class="submitButton" type="submit"></input>
+    </form>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+    <script src="/javascripts/validate.js"></script>
+  </body>
 </html>
+
+
+

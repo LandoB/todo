@@ -4,15 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var db = require('./db');
-var todo = require('./routes/todo');
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-
-
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,11 +22,45 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
+// Include instructions on how to connect to the database
+var db = require('./db');
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/todo',todo);
-app.use('/create',todo);
+
+
+
+// Set up route handlers for the root URL
+var root_routes = require('./routes/index');
+app.use('/', root_routes);
+
+
+
+// Set up route handlers for /todo URL
+var todo = require('./routes/todo');
+app.use('/todo', todo);
+
+
+var User = require("./models/user");
+
+app.get("/register", function(req, res) {
+    res.render("register");
+});
+
+app.post("/register", function(req, res) {
+    var newUser = new User(req.body);
+
+    newUser.save(function (err, user){
+      if (err) {
+        res.send("FAILED");
+      } else {
+        console.log("+++++ You're in! +++++");
+        res.redirect("/todo");
+      }
+    });
+
+});
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

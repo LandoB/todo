@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/todo.css' />
+  </head>
+  <body>
+    <h1 id="theHeader"><%= header %></h1>
+            <!-- Here is where the HTML form starts -->
+        <form id="todoForm" method="POST" action="/todo">
+
+          <legend><%= body_text %></legend>
+
+          <input type="hidden" id="_id" value="<%= todo._id %>">
+          <input type="text" id="_id" value="<%= todo._id %>">
+
+          <div>
+          	Tittle: <input type="text" id="todoTittle" name="title" placeholder="Enter Title" value="<%= todo.title %>" required>
+          </div>
+          <div>
+          	Description: <input type="textarea" id="todoDescription" name="description" placeholder="Enter Description" value="<%= todo.description %>" required>
+          </div>
+          <div>
+          	Priority (1-100): <input type="number" id="todoPriority" name="priority" value="<%= todo.priority %>" required>
+          </div>
+          <div>
+          	Complete by: <input type="text" id="todoCompletedBy" name="due_date" placeholder="mm / dd / yyyy"
+            value="<%= todo.due_date.getMonth() + 1 %> / <%= todo.due_date.getDate() %> / <%= todo.due_date.getFullYear() %>" required>
+          </div>
+          <div>
+          	Completed? <input type="checkbox" id="todoCompleted" name="complete">
+          </div>
+
+          <button type="submit">Save</button>
+
+        </form>
+        <!-- Here is where the HTML form starts -->
+        <!-- Here is where the HTML form ends -->
+
+
+
+				<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+				<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+				<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+				<script src="/javascripts/validate.js"></script>
+
+
+  </body>
+</html>

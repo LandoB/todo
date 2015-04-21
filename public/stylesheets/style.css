@@ -1,12 +1,3 @@
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}*/
-
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -17,7 +8,7 @@ body {
     color: #384047;
 }
 form {
-    max-width: 300px;
+    max-width: 450px;
     margin: 10px auto;
     padding: 10px 20px;
     background: #f4f7f8;
@@ -60,12 +51,12 @@ select {
 input[type="radio"], input[type="checkbox"] {
     margin: 0 4px 8px 0;
 }
-select {
+/*select {
     padding: 6px;
     height: 32px;
     border-radius: 2px;
-}
-button {
+}*/
+.submitButton {
     padding: 19px 39px 18px 39px;
     color: #FFF;
     background-color: #006666; /* #4bc970; */
@@ -109,9 +100,75 @@ input + label.error {
   text-align: center;
 }
 
+.register {
+  text-align: center;
+}s
+
+
+input + label.error {
+  background-color: #A7383E;
+  color: #FFE5E7;
+  clear: both;
+  padding: 3px;
+  margin: 0 0 0 10px;
+  border: 1px dotted red;
+  border-radius: 4px;
+}
+
 
 @media screen and (min-width: 480px) {
     form {
         max-width: 480px;
     }
 }
+
+
+/*
+
+body {
+  padding: 10px 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.formfield {
+  margin: 5px 0;
+}
+
+.formfield--prompt {
+  text-decoration: underline;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+input + label.error {
+  background-color: #A7383E;
+  color: #FFE5E7;
+  clear: both;
+  padding: 3px;
+  margin: 0 0 0 10px;
+  border: 1px dotted red;
+  border-radius: 4px;
+}
+
+.todo-item {
+  border: 1px dotted black;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.actions {
+  padding: 10px 0 0 0;
+}
+
+.deleteButton, .submitButton, .editButton {
+  margin: 0 10px 0 0;
+}
+
+
+*/

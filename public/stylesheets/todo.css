@@ -1,23 +1,68 @@
-#greeting {
+.new-todo-item {
   text-align: center;
-  font-size: 2.5em;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-section#toDoList {
-  text-align: left;
-  font-size: 1.5em;
-  margin-top: 30px;
+  font-size: 1em;
+  margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  font-family: 'Inconsolata', arial;
+  padding: 5px 10px 10px 10px;
+  /*background-color: #006666;*/
+  border-radius: 5px;
+  width: 95%;
+  /*height: 10%;*/
+  border: 2px solid #e8eeef;
+  /*border-width: 1px 1px 3px;*/
+  /*box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;*/
+}
+
+.show-todo-item {
+  max-width: 450px;
+  /*background: #f4f7f8;*/
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-left: 27%;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-family: 'Inconsolata', arial;
+  padding: 5px 10px 10px 10px;
+  /*background-color: #006666;*/
+  border-radius: 5px;
+  width: 95%;
+  /*height: 10%;*/
+  border: 2px solid #e8eeef;
+  /*border-width: 1px 1px 3px;*/
+  /*box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;*/
+}
+
+a {
+  font-family: 'Inconsolata', arial;
+  font-size: 1em;
+  color: #3ac162;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#theHeader {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.greeting {
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
   height: auto;
   outline: 0;
-  padding: 15px;
-  width: 97%;
+  padding: 10px;
+  width: 95%;
   background-color: #e8eeef;
   color: #006666;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
@@ -25,16 +70,12 @@ section#toDoList {
 }
 
 
-.list-of-todo-items li {
-  display: table-row;
+.todo-item {
   font-family: 'Inconsolata', arial;
-  font-size: 0.75em;
+  font-size: 1em;
   font-weight: normal;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 20px;
 }
 
 
@@ -48,20 +89,38 @@ section#toDoList {
   background-color: #8a97a0;
   color: #384047;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-  margin: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
   border-radius: 10px;
+}
+
+#todoDescription {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
 }
 
 .editButton {
   padding: 5px 10px 10px 10px;
   color: #333;
   background-color: #e8eeef; /* #4bc970; */
-  font-size: 0.70em;
+  font-size: 1em;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 30%;
-  height: 10%;
+  width: 40%;
+  height: 5%;
   border: 1px solid #384047; /* #3ac162; */
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -73,24 +132,7 @@ section#toDoList {
   padding: 5px 10px 10px 10px;
   color: #e8eeef;
   background-color: #900000; /* #4bc970; */
-  font-size: 0.70em;
-  text-align: center;
-  font-style: normal;
-  border-radius: 5px;
-  width: 30%;
-  height: 10%;
-  border: 1px solid #384047; /* #3ac162; */
-  border-width: 1px 1px 3px;
-  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
-
-.addButton {
-  padding: 5px 10px 10px 10px;
-  color: #e8eeef;
-  background-color: #006666;
-  font-size: 0.70em;
+  font-size: 1em;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
@@ -104,8 +146,6 @@ section#toDoList {
 }
 
 
-.myButton {
-  display: inline;
-  font-family: 'Inconsolata', arial;
-}
+
+
 

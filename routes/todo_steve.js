@@ -1,9 +1,22 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var router = express.Router();
+var Schema = mongoose.Schema;
 var todoList = [];
 
+
+var todoSchema = mongoose.Schema({
+  due_date: Date,
+  timestamp: { type: Date, default: Date.now },
+  description: { type: String, required: true },
+  title:  { type: String, required: true },
+  priority: Number,
+  complete: { type: Boolean, default: false }
+});
+
+
 // Include the model for a Todo that we set up in Mongoose
-var Todo = require('../models/todo');
+var Todo = mongoose.model("Todo", todoSchema);
 
 // Send the todo list back to the client
 var sendTodoList = function (req, res, next) {
@@ -11,17 +24,16 @@ var sendTodoList = function (req, res, next) {
     if (err) {
       console.log(err);
     } else {
-      res.render("todoList", {
-        title: "List of tasks",
-        message: "Things you still need to do",
-        todos: list
+        res.render('todo', {
+        greeting: 'Here is your To Do List',
+        tasks: tasks
       });
     }
   });
-}
+};
 
 // Handle a GET request from the client to /todo/list
-router.get('/list', function (req,res,next) {
+router.get('/', function (req,res,next) {
   Todo.find({}, function (err, list) {
     if (err) {
       console.log(err);
@@ -98,7 +110,7 @@ router.post('/', function (req, res, next) {
               message: "Could not save task with updated information."
             });
           } else {
-            res.redirect('/todo/list');
+            res.redirect('/');
           }
         });
       }
@@ -115,10 +127,10 @@ router.post('/', function (req, res, next) {
             status: 500,
             stack: JSON.stringify(err.errors)
           },
-          message: "Could not create a New Item. Some parameters are missing. Please try it again."
+          message: "You failed!"
         });
       } else {
-        res.redirect('/todo/list');
+        res.redirect('todo');
       }
     });
   }
@@ -161,7 +173,3 @@ router.get('/', function (req, res) {
 });
 
 module.exports = router;
-
-
-
-

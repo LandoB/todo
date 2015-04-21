@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/todo.css' />
+  </head>
+  <body>
+
+    <div class="new-todo-item">
+      <a href="/todo">Create a New To Do Item</a>
+    </div>
+
+    <div class="greeting">
+      <h1><%= message %></h1>
+    </div>
+
+
+
+    <% for (var c = 0; c < todos.length; c++) { %>
+      <% var currentTodo = todos[c]; %>
+      <div class="todo-item itemsBorder" id="todo_<%= currentTodo._id %>">
+        <div>
+          <b>Title:</b> <%= currentTodo.title %>
+        </div>
+        <div>
+          <b>Description:</b> <%= currentTodo.description %>
+        </div>
+        <div>
+          <b>Priority:</b> <%= currentTodo.priority %>
+        </div>
+        <div>
+          <b>Due date:</b> <%= currentTodo.due_date.getMonth() + 1 %> / <%= currentTodo.due_date.getDate() %> / <%= currentTodo.due_date.getFullYear() %>
+        </div><br>
+
+        <div class="actions">
+          <a class="deleteButton" id="<%= currentTodo._id %>">Delete</a>
+          <a class="editButton" id="<%= currentTodo._id %>">Edit</a>
+        </div>
+      </div>
+    <% } %>
+    <br><br><br>
+    <div class="greeting">
+      <h1>Things you have completed</h1>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="/javascripts/todoHandler.js"></script>
+
+  </body>
+</html>
