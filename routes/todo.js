@@ -115,7 +115,7 @@ router.post('/', function (req, res, next) {
             status: 500,
             stack: JSON.stringify(err.errors)
           },
-          message: "Could not create a New Item. Some parameters are missing. Please try it again."
+          message: "Could not create a New Item. See the error below for more information and then try it again."
         });
       } else {
         res.redirect('/todo/list');

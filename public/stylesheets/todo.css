@@ -145,6 +145,25 @@ a {
   margin-bottom: 1px;
 }
 
+.completeButton {
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Inconsolata', arial;
+  padding: 5px 10px 10px 10px;
+  color: #e8eeef;
+  background-color: #006666;
+  border-radius: 5px;
+  width: 30%;
+  height: 10%;
+  border: 1px solid #384047; /* #3ac162; */
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+.actions {
+  margin-top: -50px;
+  float: right;
+}
 
 
 

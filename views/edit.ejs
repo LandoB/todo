@@ -21,11 +21,11 @@
 
       <div class="formfield">
         <div class="formfield--prompt">Title:</div>
-        <input type="text" id="todoTitle" name="title" value="<%= todo.title %>" placeholder="Enter Title" required>
+        <input type="text" id="todoTitle" name="title" value="<%= todo.title %>" required>
       </div>
       <div class="formfield">
           <div>
-            Description: <input type="textarea" id="todoDescription" name="description" placeholder="Enter Description" required>
+            Description: <input type="textarea" id="todoDescription" name="description" value="<%= todo.description %>" required>
           </div>
       </div>
       <div class="formfield">
@@ -39,7 +39,7 @@
           value="<%= todo.due_date.getMonth() + 1 %>/<%= todo.due_date.getDate() %>/<%= todo.due_date.getFullYear() %>" required>
       </div>
       <div>
-            C o m p l e t e d ?  <input type="checkbox" id="todoCompleted" name="complete">
+            Completed?  <input type="checkbox" id="todoCompleted" name="complete">
       </div>
 
       <input class="submitButton" type="submit"></input>
