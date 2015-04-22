@@ -125,24 +125,59 @@ router.post('/', function (req, res, next) {
 });
 
 // Handle a GET request from the client to /todo/:id
+
+// This is a little bit different since I wanted to use an index.js and a edit.js
 router.get('/:id', function (req, res) {
+  //console.log(req.params.id);
 
-  Todo.find({ _id: req.params.id }, function (err, item) {
-    var thisItem = item[0];
+        Todo.find({ _id: req.params.id }, function (err, item) {
+          var thisItem = item[0];
 
-    // Was there an error when retrieving?
-    if (err) {
-      console.log(err);
 
-    // Find was successful
-    } else {
-      res.render('todo', {
-        title : 'Express Todo Example',
-        todo: thisItem
+          //was there an error when removing?
+          if (err) {
+           console.log(err);
+
+          // Find was succesful
+          } else {
+            //res.send("SUCCESS!");
+
+            // If EDITing an existing item
+              res.render('edit', {  // Changed to edit instead of index to be able to access edit.ejs
+                  title: 'Express To Do App',
+                  header: '<<<<< Edit Mode >>>>>',
+                  body_text: 'Please enter the new information for your To Do Item',
+                  todo: thisItem
+                });
+          }
       });
-    }
-  });
+
 });
+
+
+
+// Handle a GET request from the client to /todo/:id <--comment
+
+// router.get('/:id', function (req, res) {
+
+//   Todo.find({ _id: req.params.id }, function (err, item) {
+//     var thisItem = item[0];
+
+    // Was there an error when retrieving? <--comment
+    // if (err) {
+    //   console.log(err);
+
+    // Find was successful <--comment
+//     } else {
+//       res.render('todo', {
+//         title : 'Express Todo Example',
+//         todo: thisItem
+//       });
+//     }
+//   });
+// });
+
+
 
 // Handle a GET request from the client to /todo
 router.get('/', function (req, res) {

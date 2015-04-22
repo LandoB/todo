@@ -1,52 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> <html>
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/todo.css' />
   </head>
   <body>
-    <h1 id="theHeader"><%= header %></h1>
-            <!-- Here is where the HTML form starts -->
-        <form id="todoForm" method="POST" action="/todo">
 
-          <legend><%= body_text %></legend>
+  <div class="show-todo-item">
+    <a href="/todo/list">Go back</a>
+  </div>
 
-          <input type="hidden" id="_id" value="<%= todo._id %>">
-          <input type="text" id="_id" value="<%= todo._id %>">
+    <h1>Edit your task</h1>
 
+    <form method="POST" action="/todo" id="todoForm">
+
+      <input type="hidden" name="db_id" value="<%= todo._id %>">
+
+      <div class="formfield">
+        <div class="formfield--prompt">Title:</div>
+        <input type="text" id="todoTitle" name="title" value="<%= todo.title %>" placeholder="Enter Title" required>
+      </div>
+      <div class="formfield">
           <div>
-          	Tittle: <input type="text" id="todoTittle" name="title" placeholder="Enter Title" value="<%= todo.title %>" required>
+            Description: <input type="textarea" id="todoDescription" name="description" placeholder="Enter Description" required>
           </div>
-          <div>
-          	Description: <input type="textarea" id="todoDescription" name="description" placeholder="Enter Description" value="<%= todo.description %>" required>
-          </div>
-          <div>
-          	Priority (1-100): <input type="number" id="todoPriority" name="priority" value="<%= todo.priority %>" required>
-          </div>
-          <div>
-          	Complete by: <input type="text" id="todoCompletedBy" name="due_date" placeholder="mm / dd / yyyy"
-            value="<%= todo.due_date.getMonth() + 1 %> / <%= todo.due_date.getDate() %> / <%= todo.due_date.getFullYear() %>" required>
-          </div>
-          <div>
-          	Completed? <input type="checkbox" id="todoCompleted" name="complete">
-          </div>
+      </div>
+      <div class="formfield">
+        <div class="formfield--prompt">Priority (1-100):</div>
+        <input type="text" id="todoPriority" name="priority" value="<%= todo.priority %>" required>
+      </div>
+      <div class="formfield">
+        <div class="formfield--prompt">Complete by:</div>
+        <input type="text" id="todoDuedate"
+          name="due_date"
+          value="<%= todo.due_date.getMonth() + 1 %>/<%= todo.due_date.getDate() %>/<%= todo.due_date.getFullYear() %>" required>
+      </div>
+      <div>
+            C o m p l e t e d ?  <input type="checkbox" id="todoCompleted" name="complete">
+      </div>
 
-          <button type="submit">Save</button>
+      <input class="submitButton" type="submit"></input>
+    </form>
 
-        </form>
-        <!-- Here is where the HTML form starts -->
-        <!-- Here is where the HTML form ends -->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 
-
-
-				<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-				<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-				<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-				<script src="/javascripts/validate.js"></script>
-
-
+    <script src="/javascripts/validate.js"></script>
   </body>
 </html>
+
+
+
+

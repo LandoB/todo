@@ -2,7 +2,8 @@ $(document).ready(function() {
 
   // User clicked on an edit button
   $(".editButton").click(function () {
-    window.location.href = "/todo/" + $(this)[0].id;
+     window.location.href = "/todo/" + $(this)[0].id;
+     //window.location.href = "/edit/" + $(this)[0].id;
   });
 
   // User clicked on a delete button

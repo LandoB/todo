@@ -21,11 +21,12 @@
 
       <div class="formfield">
         <div class="formfield--prompt">Title:</div>
-        <input type="text" id="todoTitle" name="title" value="<%= todo.title %>" required>
+        <input type="text" id="todoTitle" name="title" value="<%= todo.title %>" placeholder="Enter Title" required>
       </div>
       <div class="formfield">
-        <div class="formfield--prompt">Description:</div>
-        <textarea id="todoDescription" name="description"><%= todo.description %></textarea required>
+          <div>
+            Description: <input type="textarea" id="todoDescription" name="description" placeholder="Enter Description" required>
+          </div>
       </div>
       <div class="formfield">
         <div class="formfield--prompt">Priority (1-100):</div>
@@ -51,3 +52,5 @@
 
 
 
+<!--         <div class="formfield--prompt">Description:</div>
+        <textarea id="todoDescription" name="description" placeholder="Enter Description"><%= todo.description %></textarea required> -->
